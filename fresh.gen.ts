@@ -2,24 +2,40 @@
 // This file SHOULD be checked into source version control.
 // This file is automatically updated during development when running `dev.ts`.
 
+import * as $_marketing_layout from "./routes/(marketing)/_layout.tsx";
+import * as $_marketing_check from "./routes/(marketing)/check.tsx";
+import * as $_marketing_minting from "./routes/(marketing)/minting.tsx";
+import * as $_marketing_nftdiploma from "./routes/(marketing)/nftdiploma.tsx";
 import * as $_404 from "./routes/_404.tsx";
 import * as $_app from "./routes/_app.tsx";
+import * as $admin_layout from "./routes/admin/_layout.tsx";
+import * as $admin_connect_index from "./routes/admin/connect/index.tsx";
+import * as $admin_index from "./routes/admin/index.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
 import * as $Counter from "./islands/Counter.tsx";
+import * as $Login from "./islands/Login.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
   routes: {
+    "./routes/(marketing)/_layout.tsx": $_marketing_layout,
+    "./routes/(marketing)/check.tsx": $_marketing_check,
+    "./routes/(marketing)/minting.tsx": $_marketing_minting,
+    "./routes/(marketing)/nftdiploma.tsx": $_marketing_nftdiploma,
     "./routes/_404.tsx": $_404,
     "./routes/_app.tsx": $_app,
+    "./routes/admin/_layout.tsx": $admin_layout,
+    "./routes/admin/connect/index.tsx": $admin_connect_index,
+    "./routes/admin/index.tsx": $admin_index,
     "./routes/api/joke.ts": $api_joke,
     "./routes/greet/[name].tsx": $greet_name_,
     "./routes/index.tsx": $index,
   },
   islands: {
     "./islands/Counter.tsx": $Counter,
+    "./islands/Login.tsx": $Login,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;
