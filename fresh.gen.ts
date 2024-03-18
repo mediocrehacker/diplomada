@@ -14,8 +14,9 @@ import * as $admin_index from "./routes/admin/index.tsx";
 import * as $api_joke from "./routes/api/joke.ts";
 import * as $greet_name_ from "./routes/greet/[name].tsx";
 import * as $index from "./routes/index.tsx";
+import * as $Connect from "./islands/Connect.tsx";
 import * as $Counter from "./islands/Counter.tsx";
-import * as $Login from "./islands/Login.tsx";
+import * as $MetaDataForm from "./islands/MetaDataForm.tsx";
 import { type Manifest } from "$fresh/server.ts";
 
 const manifest = {
@@ -34,8 +35,9 @@ const manifest = {
     "./routes/index.tsx": $index,
   },
   islands: {
+    "./islands/Connect.tsx": $Connect,
     "./islands/Counter.tsx": $Counter,
-    "./islands/Login.tsx": $Login,
+    "./islands/MetaDataForm.tsx": $MetaDataForm,
   },
   baseUrl: import.meta.url,
 } satisfies Manifest;

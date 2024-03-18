@@ -1,18 +1,13 @@
+import { env } from "../../config.ts";
+import Connect from "../../islands/Connect.tsx";
+import MetaDataForm from "../../islands/MetaDataForm.tsx";
+
 export default function Page() {
+  const blockfrost = env["BLOCKFROST"] || Deno.env.get("BLOCKFROST");
+
   return (
-    <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex lg:items-center">
-      <ul class="mx-auto text-center flex flex-col gap-8">
-        <li>
-          <button class="btn btn-outline btn-primary">
-            Connect Nami Wallet
-          </button>
-        </li>
-        <li>
-          <button class="btn btn-outline btn-secondary">
-            Connect Lace Wallet
-          </button>
-        </li>
-      </ul>
+    <div class="mx-auto max-w-screen-xl px-4 lg:flex lg:items-center">
+      <MetaDataForm blockfrost={ blockfrost } />
     </div>
   );
 }
