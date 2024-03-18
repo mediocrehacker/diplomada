@@ -2,11 +2,12 @@ import { AppProps } from "$fresh/server.ts";
 
 export default function App({ Component }: AppProps) {
   return (
-    <html>
+    <html lang="ru">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>fresh_template</title>
+        <link rel="stylesheet" href="/styles.css" />
+        <title>Цифровые сертификаты в образовании</title>
       </head>
       <body>
         <Component />
