@@ -1,9 +1,12 @@
 import { Header } from "../components/Header.tsx";
+import { env } from "../config.ts";
 
 export default function Page() {
+  const blockfrost = env["BLOCKFROST"] || Deno.env.get("BLOCKFROST");
+
   return (
     <div>
-      <Header />
+      <Header blockfrost={blockfrost} />
       <Banner />
     </div>
   );
@@ -12,7 +15,7 @@ export default function Page() {
 function Banner() {
   return (
     <section class="bg-gay-50">
-      <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex h-[calc(100vh-64px)] lg:items-center">
+      <div class="mx-auto max-w-screen-xl px-4 py-32 lg:flex h-[calc(100vh-74px)] lg:items-center">
         <div class="mx-auto max-w-xl text-center">
           <h1 class="text-3xl font-extrabold sm:text-4xl">
             Цифровые сертификаты
@@ -27,7 +30,7 @@ function Banner() {
           <div class="mt-8 flex flex-wrap justify-center gap-4">
             <a
               class="block w-full rounded bg-teal-600 px-12 py-3 text-sm font-medium text-white shadow hover:bg-teal-700 focus:outline-none focus:ring active:bg-teal-500 sm:w-auto"
-              href="/admin/connect"
+              href="https://appdiplomada.deno.dev"
             >
               Старт
             </a>
